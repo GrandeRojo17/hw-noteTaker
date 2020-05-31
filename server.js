@@ -8,7 +8,7 @@ const htmlRoutes = require("./routes/htmlRoute");
 
 // Initialize the app and create a port
 const app = express();
-const PORT = process.env.PORT || 3369;
+const PORT = process.env.PORT || 3367;
 
 // Set up body parsing, static, and route middleware
 app.use(express.urlencoded({ extended: true }));
@@ -34,7 +34,6 @@ app.post("/api/notes", (req, res) => {
   console.log(addNote);
 });
 
-//  DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
 app.delete("api/notes/:id", function (req, res) {
   save
     .removeNote(req.params.id)

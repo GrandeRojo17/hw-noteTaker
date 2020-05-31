@@ -3,15 +3,15 @@ const util = require("util");
 const fs = require("fs");
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
-const { v4: uuidv4 } = require("uuid");
-uuidv4();
+const uuidv1 = require("uuid/v1");
+
 class Save {
   read() {
     return readFile("/db.json", "utf8");
   }
 
   write(note) {
-    return writeFile("/db.json", json.stringify(note));
+    return writeFile("/db.json", JSON.stringify(note));
   }
   getNotes() {
     return this.read().then((notes) => {
@@ -30,8 +30,8 @@ class Save {
       throw new Error("Note 'title' and 'text' cannot be blank");
     }
     // Add a unique id to the note using uuid package
-    const newNote = { title, text, id: uuid() };
-    // Get all notes, add the new note, write all the updated notes, return the newNote
+    const newNote = { title, text, id: uuidv1() };
+    // Get, add, and update notes, return the new note.
     return this.getNotes()
       .then((notes) => [...notes, newNote])
       .then((updatedNotes) => this.write(updatedNotes))
