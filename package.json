@@ -1,14 +1,25 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "by David Yennerell a.k.a Granderojo17 on 5/27/20\r ![Licenses](https://img.shields.io/badge/license-MIT-blue.svg)",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "express": "^4.17.1",
+    "uuid": "^8.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrandeRojo17/hw-noteTaker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/GrandeRojo17/hw-noteTaker/issues"
+  },
+  "homepage": "https://github.com/GrandeRojo17/hw-noteTaker#readme"
 }
